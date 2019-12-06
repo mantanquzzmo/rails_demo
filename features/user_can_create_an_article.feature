@@ -8,11 +8,12 @@ Feature: User can create articles
     Given the following user exist:
       | email         | password |
       | user@mail.com | password |
-    And I am on the landing page
+    
 
 
   Scenario: User can succesfully create an article 
     Given I am logged in as "user@mail.com"
+    And I am on the signed in page
     And I click on "New Article"
     And I fill in "Title" with "Happy holidays"
     And I fill in "Content" with "Buy your gifts now!"
@@ -23,4 +24,5 @@ Feature: User can create articles
     And I should see "Buy your gifts now!"
 
   Scenario: Visitor can not create an article [sad path]
+  When I am on the landing page
   Then I should not see "New Article"
