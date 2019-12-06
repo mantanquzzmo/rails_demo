@@ -9,11 +9,11 @@ Feature: User can create articles
       | email         | password |
       | user@mail.com | password |
     And I am on the landing page
-    And I click on "New Article"
+
 
   Scenario: User can succesfully create an article 
     Given I am logged in as "user@mail.com"
-    When I click on "New Article"
+    And I click on "New Article"
     And I fill in "Title" with "Happy holidays"
     And I fill in "Content" with "Buy your gifts now!"
     And I click on "Create Article"
@@ -22,5 +22,5 @@ Feature: User can create articles
     And I should see "Happy holidays"
     And I should see "Buy your gifts now!"
 
-  # Scenario: Visitor can not create an article [sad path]
-  # Then I should not see "New article"
+  Scenario: Visitor can not create an article [sad path]
+  Then I should not see "New Article"
