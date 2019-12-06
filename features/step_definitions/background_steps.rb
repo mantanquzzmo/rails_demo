@@ -6,7 +6,7 @@ end
 
 Given("the following user exist:") do |table|
   table.hashes.each do |user_attrs|
-    create(:user, user_attrs)
+    User.create!(user_attrs)
   end
 end
 
