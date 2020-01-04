@@ -11,7 +11,7 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'solargraph'
 gem 'devise'
-
+gem 'pry', '~> 0.12.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do

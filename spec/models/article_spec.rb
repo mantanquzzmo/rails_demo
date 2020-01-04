@@ -12,6 +12,10 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of :content } 
   end
 
+  describe 'Associations' do
+    it { is_expected.to have_many :comments }
+   end
+
   describe 'Factory' do
     it 'should have valid Factory' do
       expect(FactoryBot.create(:article)).to be_valid 
