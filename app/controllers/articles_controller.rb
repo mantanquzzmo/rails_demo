@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create edit update]
 
   def index
     @articles = Article.all
@@ -22,6 +22,21 @@ class ArticlesController < ApplicationController
       redirect_to article, notice: 'Article was succesfully created.'
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    article = Article.find(params[:id])
+    article.update(article_params)
+
+    if article.errors.empty?
+      redirect_to article, notice: "Article updated"
+    else
+      render 'edit'
     end
   end
 

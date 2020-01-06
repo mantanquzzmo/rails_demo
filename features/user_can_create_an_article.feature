@@ -1,4 +1,3 @@
-
 Feature: User can create articles
   As a publisher
   In order to add relevant content to my news service
